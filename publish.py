@@ -35,8 +35,6 @@ query = "SELECT df.account, df.type, df.source, "\
 
 df = ps.sqldf(query, locals())
 print(query)
-df.to_csv("scored-this-week.csv", index=False)
-
 query = "SELECT account as [Игрок Account], sum(citadel) as [Цитадели Citadels], sum(crypt) as [Склепы Crypts], "\
         " count(*) as [Cундуки Chests], SUM(score) as [Очки Score]  "\
             " FROM df GROUP BY account "
